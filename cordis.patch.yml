@@ -1,0 +1,12 @@
+# dsh-cloudflare-mcp bundle patch: inserts the plugin row into the profile
+# roster. Applied as a profile bundle layer (declared by the `dsh.bundle.patch`
+# manifest field in package.json). Activate with:
+#
+#   # local development (link)
+#   dsh plugin --profile web add link:/path/to/dsh-cloudflare-mcp
+- insert:
+    - id: cloudflare-mcp
+      name: dsh-cloudflare-mcp
+      config:
+        announceToAgent: true   # 在系统提示中公告插件（工具 + 能力说明）
+        enabled: true           # 插件总开关
